@@ -195,7 +195,18 @@ end alfred_script
 				<key>keyword</key>
 				<string>choc</string>
 				<key>script</key>
-				<string>/usr/local/bin/node index.js "{query}"</string>
+				<string>CHOC_PATH="/Applications/Chocolat.app"
+
+if ! [ -d $CHOC_PATH ]; then
+    CHOC_PATH=`find /Applications -type d -maxdepth 3 -name Chocolat.app`
+fi
+
+CHOCNODE_PATH="$CHOC_PATH/Contents/MacOS/Chocolat"
+
+# $1 is set by the "Run Script" action
+args="{query}"
+
+$CHOCNODE_PATH --pretend-node index.js $args</string>
 				<key>title</key>
 				<string>Loading projects...</string>
 				<key>type</key>
