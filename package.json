@@ -1,7 +1,7 @@
 {
   "name": "chocolat-alfred-workflow",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Alfred 2 workflow for opening files or folders in Chocolat",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,6 @@
   "author": "Nicholas Penree",
   "license": "MIT",
   "dependencies": {
-    "alp": "^0.0.1",
-    "fuzzy-filter": "0.0.3"
+    "alfredo": "^0.2.0"
   }
 }
