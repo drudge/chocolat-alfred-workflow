@@ -13,6 +13,11 @@ var getResults = exports.getResults = function(arg) {
   var projects = alfredo.readPlistSync(PROJECTS_FILE) || [];
   var results = [];
   
+  results = results.map(function(project) {
+    project.directoryPath = decodeURIComponent(project.directoryPath);
+    return project;
+  });
+  
   if (!arg) {
     results = projects.sort(function(a, b) {
       return b.lastOpened - a.lastOpened;
